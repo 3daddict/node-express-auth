@@ -10,6 +10,11 @@ function tokenForUser(user) {
     //iat - token issued at time
 };
 
+exports.signin = function(req, res, next) {
+    //once user has been authorized provide them a token
+    res.send({ token: tokenForUser(req.user) });
+};
+
 exports.signup = function(req, res, next) {
     const email = req.body.email;
     const password = req.body.password;
