@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 //DB Setup
 mongoose.connect("mongodb://localhost:auth/auth", { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true);
 
 //App Setup
 app.use(morgan('combined'));
